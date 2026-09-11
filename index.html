@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #111827;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #dbeafe, #f0f9ff);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            font-size: 25px;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* Common Section */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+            color: #111827;
+        }
+
+        /* About */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #4b5563;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        /* Education */
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #2563eb;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .project-card h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #4b5563;
+        }
+
+        /* Internship */
+        .internship {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .internship h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>My Portfolio</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Home -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hello, I'm Daniel</h1>
+
+            <h3>Engineering Student | Java Developer | AI & Web Enthusiast</h3>
+
+            <p>
+                I am passionate about technology, software development,
+                artificial intelligence and building real-world projects.
+                I enjoy learning new technologies and improving my technical skills.
+            </p>
+
+            <a href="#projects" class="btn">View Projects</a>
+
+            <a href="#contact" class="btn">Contact Me</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+
+            <p>
+                I am an engineering student interested in software development,
+                artificial intelligence and modern web technologies.
+                I have hands-on experience working with Java, Python, SQL,
+                HTML, CSS and JavaScript.
+            </p>
+
+            <br>
+
+            <p>
+                I enjoy converting ideas into practical applications.
+                My goal is to continuously improve my programming,
+                problem-solving and software development skills while
+                working on real-world projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill">Java</div>
+
+            <div class="skill">Python</div>
+
+            <div class="skill">SQL</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+            <div class="skill">JavaScript</div>
+
+            <div class="skill">React</div>
+
+            <div class="skill">Flask</div>
+
+            <div class="skill">Machine Learning</div>
+
+            <div class="skill">Git & GitHub</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-card">
+
+            <h3>Bachelor of Technology</h3>
+
+            <p>
+                Engineering Student
+            </p>
+
+            <p>
+                Interested in Electrical Engineering, Software Development,
+                Artificial Intelligence and Emerging Technologies.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Internship -->
+    <section id="internship">
+
+        <h2 class="section-title">Internship Experience</h2>
+
+        <div class="internship">
+
+            <h3>NIT Nagaland — Internship</h3>
+
+            <p>
+                Completed an internship related to nanotechnology,
+                fabrication and technology-based applications.
+            </p>
+
+            <br>
+
+            <p>
+                During the internship, I also worked on a website project
+                for an ECE department laboratory, gaining practical experience
+                in web development and project implementation.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+
+                <h3>AI Fake Content Detection</h3>
+
+                <p>
+                    An AI-based system designed to identify potentially
+                    fake or manipulated content using machine learning
+                    techniques.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>NeuroTouch</h3>
+
+                <p>
+                    A hands-free reading companion that combines
+                    book reading assistance and gesture-based interaction.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>AI Chemistry Experiment Tool</h3>
+
+                <p>
+                    An AI-powered educational application designed
+                    to assist students with chemistry experiments
+                    and laboratory learning.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Train Tracker</h3>
+
+                <p>
+                    A project designed to provide train tracking
+                    and related travel information.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Water Tank Detector</h3>
+
+                <p>
+                    A technology-based project designed to monitor
+                    water tank levels and help prevent overflow.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Banking System</h3>
+
+                <p>
+                    A Java-based application demonstrating
+                    object-oriented programming concepts and
+                    basic banking operations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact">
+
+            <p>
+                 Email:
+                <a href="mailto:dd2589741@gmail.com">
+                    Daniel gmail
+                </a>
+            </p>
+
+            <p>
+                 GitHub:
+                <a href="https://github.com/dd2589741">
+                     GitHub
+                </a>
+            </p>
+
+            <p>
+                 LinkedIn:
+                <a href="www.linkedin.com/in/daniel-h-650902289
+
+">
+                    Your LinkedIn
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Daniel | All Rights Reserved
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
