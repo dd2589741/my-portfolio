@@ -15,36 +15,254 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation */
+/* =========================
+   NAVBAR
+========================= */
+
 nav {
-    background: #111827;
-    padding: 18px 8%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 60px;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    animation: navbarEnter 0.8s ease forwards;
 }
 
+
+/* =========================
+   LOGO
+========================= */
+
 nav h2 {
-    color: white;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    animation: logoEnter 1s ease forwards;
+    transition: transform 0.3s ease;
 }
+
+nav h2:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   MENU
+========================= */
 
 nav ul {
     display: flex;
+    align-items: center;
+
+    gap: 35px;
+
     list-style: none;
-    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
+
+
+/* =========================
+   LINKS
+========================= */
+
+nav ul li {
+    position: relative;
+
+    opacity: 0;
+    animation: menuEnter 0.6s ease forwards;
+}
+
+
+/* Stagger animation */
+
+nav ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+nav ul li:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+nav ul li:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+nav ul li:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+nav ul li:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+
+/* =========================
+   LINK TEXT
+========================= */
 
 nav ul li a {
-    color: white;
+    position: relative;
+
+    display: inline-block;
+
     text-decoration: none;
-    font-weight: bold;
+    color: #222;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
+
+/* =========================
+   UNDERLINE ANIMATION
+========================= */
+
+nav ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background: #000;
+
+    transform: translateX(-50%);
+
+    transition:
+        width 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Hover */
+
 nav ul li a:hover {
-    color: #38bdf8;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+
+nav ul li a:hover::after {
+    width: 100%;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   CLICK EFFECT
+========================= */
+
+nav ul li a:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================
+   NAVBAR ENTRANCE
+========================= */
+
+@keyframes navbarEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   LOGO ANIMATION
+========================= */
+
+@keyframes logoEnter {
+
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================
+   MENU ENTRANCE
+========================= */
+
+@keyframes menuEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 18px 25px;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    nav h2 {
+        font-size: 23px;
+    }
+
 }
 
 /* Hero */
